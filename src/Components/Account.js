@@ -1,7 +1,17 @@
 import React from "react";
+import firebase from "../FirebaseConfig";
+
+const firebaseAuth = firebase.auth();
 
 const Account = () => {
-	return <div id="account">Hi I'm the Account</div>;
+	const signOut = () => {
+		firebaseAuth.signOut();
+	};
+	return (
+		<div id="account">
+			<button onClick={signOut}>Sign Out</button>
+		</div>
+	);
 };
 
 export default Account;

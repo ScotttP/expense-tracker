@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
 	HashRouter as Router,
 	Switch,
@@ -12,26 +12,75 @@ import History from "./Components/History";
 import Navbar from "./Components/Navbar";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
+import firebase from "./FirebaseConfig";
+
+const firebaseAuth = firebase.auth();
+const firestore = firebase.firestore();
 
 const App = () => {
-	const currentUser = null;
+	const [loggedIn, setLoggedIn] = useState(false);
+
+	const authStateChange = (user) => {
+		if (user) return setLoggedIn(true);
+		else return setLoggedIn(false);
+	};
+
+	useEffect(() => {
+		const unsubscribe = firebaseAuth.onAuthStateChanged(authStateChange);
+		return () => {
+			unsubscribe();
+		};
+	}, []);
+
 	return (
 		<Router>
-			<Navbar></Navbar>
+			<Navbar currentUser={firebaseAuth.currentUser}></Navbar>
 			<div id="content">
 				<Switch>
 					<Route
 						exact
 						path="/"
 						render={() =>
-							currentUser ? <Redirect to="/Dashboard" /> : <Login></Login>
+							firebaseAuth.currentUser ? (
+								<Redirect to="/Dashboard" />
+							) : (
+								<Login></Login>
+							)
+						}
+					></Route>
+
+					<Route
+						exact
+						path="/Login"
+						render={() =>
+							firebaseAuth.currentUser ? (
+								<Redirect to="/Dashboard" />
+							) : (
+								<Login />
+							)
+						}
+					></Route>
+
+					<Route
+						exact
+						path="/SignUp"
+						render={() =>
+							firebaseAuth.currentUser ? (
+								<Redirect to="/Dashboard" />
+							) : (
+								<SignUp></SignUp>
+							)
 						}
 					></Route>
 					<Route
 						exact
 						path="/Dashboard"
 						render={() =>
-							!currentUser ? <Redirect to="/Login" /> : <Dashboard></Dashboard>
+							firebaseAuth.currentUser ? (
+								<Dashboard></Dashboard>
+							) : (
+								<Redirect to="/Login" />
+							)
 						}
 					></Route>
 
@@ -39,18 +88,24 @@ const App = () => {
 						exact
 						path="/History"
 						render={() =>
-							!currentUser ? <Redirect to="/Login" /> : <History></History>
+							firebaseAuth.currentUser ? (
+								<History></History>
+							) : (
+								<Redirect to="/Login" />
+							)
 						}
 					></Route>
 					<Route
 						exact
 						path="/Account"
 						render={() =>
-							!currentUser ? <Redirect to="/Login" /> : <Account></Account>
+							firebaseAuth.currentUser ? (
+								<Account></Account>
+							) : (
+								<Redirect to="/Login" />
+							)
 						}
 					></Route>
-					<Route exact path="/Login" component={Login}></Route>
-					<Route exact path="/SignUp" component={SignUp}></Route>
 				</Switch>
 			</div>
 		</Router>

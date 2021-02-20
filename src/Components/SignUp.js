@@ -2,7 +2,7 @@ import { React } from "react";
 import Form from "./Form";
 
 const SignUp = (props) => {
-	return <Form formType="SignUp"></Form>;
+	return <Form formType="Sign Up"></Form>;
 };
 
 export default SignUp;

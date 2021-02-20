@@ -25,6 +25,9 @@ const NavbarLeft = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	h1 {
+		font-size: 1.2em;
+	}
 `;
 
 const NavbarList = styled.ul`
@@ -32,7 +35,7 @@ const NavbarList = styled.ul`
 	align-items: center;
 	justify-content: space-evenly;
 	list-style: none;
-	min-width: 350px;
+	min-width: 20%;
 	max-width: 410px;
 
 	a {
@@ -70,7 +73,7 @@ const HamburgerSpan = styled.span`
 	}
 `;
 
-const Navbar = () => {
+const Navbar = (props) => {
 	const [display, setDisplay] = useState("none");
 
 	return (
@@ -100,15 +103,28 @@ const Navbar = () => {
 			</NavbarLeft>
 
 			<NavbarList id="Navbarlist" display={display}>
-				<li>
-					<Link to="/Dashboard">Dashboard</Link>
-				</li>
-				<li>
-					<Link to="/History">History</Link>
-				</li>
-				<li>
-					<Link to="/Account">Account</Link>
-				</li>
+				{props.currentUser ? (
+					<>
+						<li>
+							<Link to="/Dashboard">Dashboard</Link>
+						</li>
+						<li>
+							<Link to="/History">History</Link>
+						</li>
+						<li>
+							<Link to="/Account">Account</Link>
+						</li>
+					</>
+				) : (
+					<>
+						<li>
+							<Link to="/Login">Login</Link>
+						</li>
+						<li>
+							<Link to="/SignUp">SignUp</Link>
+						</li>
+					</>
+				)}
 			</NavbarList>
 		</NavbarHeader>
 	);

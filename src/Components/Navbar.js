@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const NavbarHeader = styled.header`
 	display: flex;
 	justify-content: space-between;
-	background-color: grey;
+	background-color: #3030bd;
+	color: #ffff;
 	height: fit-content;
 	position: sticky;
 	top: 0;
@@ -31,11 +32,25 @@ const NavbarList = styled.ul`
 	align-items: center;
 	justify-content: space-evenly;
 	list-style: none;
-	min-width: 40%;
+	min-width: 350px;
+	max-width: 410px;
 
 	a {
 		text-decoration: none;
-		color: black;
+		color: #ffff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+	}
+	li {
+		height: 100%;
+		width: 100%;
+		margin: 0 10px 0 10px;
+		@media screen and (max-width: 750px) {
+			margin: 10px 0 10px 0;
+		}
 	}
 	@media screen and (max-width: 750px) {
 		display: ${(props) => (props.display === "flex" ? "flex" : "none")};
@@ -46,14 +61,18 @@ const NavbarList = styled.ul`
 
 const HamburgerSpan = styled.span`
 	display: none;
+	font-size: 1.5em;
 	@media screen and (max-width: 750px) {
 		display: block;
+	}
+	&:hover {
+		cursor: pointer;
 	}
 `;
 
 const Navbar = () => {
 	const [display, setDisplay] = useState("none");
-	console.log(display);
+
 	return (
 		<NavbarHeader>
 			<NavbarLeft>
@@ -66,7 +85,17 @@ const Navbar = () => {
 						});
 					}}
 				>
-					<FontAwesomeIcon id="fontAwesomeIcon" icon={faBars}></FontAwesomeIcon>
+					{display === "none" ? (
+						<FontAwesomeIcon
+							id="fontAwesomeIcon"
+							icon={faBars}
+						></FontAwesomeIcon>
+					) : (
+						<FontAwesomeIcon
+							id="fontAwesomeIcon"
+							icon={faTimes}
+						></FontAwesomeIcon>
+					)}
 				</HamburgerSpan>
 			</NavbarLeft>
 

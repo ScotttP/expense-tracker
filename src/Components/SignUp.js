@@ -1,7 +1,8 @@
-import React from "react";
+import { React } from "react";
+import Form from "./Form";
 
-const SignUp = () => {
-	return <div id="SignUp">Hi I'm the SignUp</div>;
+const SignUp = (props) => {
+	return <Form formType="SignUp"></Form>;
 };
 
 export default SignUp;

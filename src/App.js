@@ -18,39 +18,41 @@ const App = () => {
 	return (
 		<Router>
 			<Navbar></Navbar>
-			<Switch>
-				<Route
-					exact
-					path="/"
-					render={() =>
-						currentUser ? <Redirect to="/Dashboard" /> : <Login></Login>
-					}
-				></Route>
-				<Route
-					exact
-					path="/Dashboard"
-					render={() =>
-						!currentUser ? <Redirect to="/Login" /> : <Dashboard></Dashboard>
-					}
-				></Route>
+			<div id="content">
+				<Switch>
+					<Route
+						exact
+						path="/"
+						render={() =>
+							currentUser ? <Redirect to="/Dashboard" /> : <Login></Login>
+						}
+					></Route>
+					<Route
+						exact
+						path="/Dashboard"
+						render={() =>
+							!currentUser ? <Redirect to="/Login" /> : <Dashboard></Dashboard>
+						}
+					></Route>
 
-				<Route
-					exact
-					path="/History"
-					render={() =>
-						!currentUser ? <Redirect to="/Login" /> : <History></History>
-					}
-				></Route>
-				<Route
-					exact
-					path="/Account"
-					render={() =>
-						!currentUser ? <Redirect to="/Login" /> : <Account></Account>
-					}
-				></Route>
-				<Route exact path="/Login" component={Login}></Route>
-				<Route exact path="/SignUp" component={SignUp}></Route>
-			</Switch>
+					<Route
+						exact
+						path="/History"
+						render={() =>
+							!currentUser ? <Redirect to="/Login" /> : <History></History>
+						}
+					></Route>
+					<Route
+						exact
+						path="/Account"
+						render={() =>
+							!currentUser ? <Redirect to="/Login" /> : <Account></Account>
+						}
+					></Route>
+					<Route exact path="/Login" component={Login}></Route>
+					<Route exact path="/SignUp" component={SignUp}></Route>
+				</Switch>
+			</div>
 		</Router>
 	);
 };

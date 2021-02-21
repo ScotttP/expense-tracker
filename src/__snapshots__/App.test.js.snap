@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test app snapshot 1`] = `
+Array [
+  <header
+    className="sc-bdfBwQ fFPChT"
+  >
+    <div
+      className="sc-gsTCUz iUqRFX"
+    >
+      <h1>
+        Expense Tracker
+      </h1>
+      <span
+        className="sc-hKgILt dymiNH"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-bars fa-w-14 "
+          data-icon="bars"
+          data-prefix="fas"
+          focusable="false"
+          id="fontAwesomeIcon"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </span>
+    </div>
+    <ul
+      className="sc-dlfnbm cLPmSc"
+      display="none"
+      id="Navbarlist"
+    >
+      <li>
+        <a
+          href="#/Login"
+          onClick={[Function]}
+        >
+          Login
+        </a>
+      </li>
+      <li>
+        <a
+          href="#/SignUp"
+          onClick={[Function]}
+        >
+          SignUp
+        </a>
+      </li>
+    </ul>
+  </header>,
+  <div
+    id="content"
+  >
+    <div
+      className="sc-eCssSg kHqwrC"
+    >
+      <form
+        className="sc-jSgupP crnJYq"
+      >
+        <div
+          className="sc-gKsewC cntkFc"
+        >
+          <h1
+            className="sc-iBPRYJ eMDTAQ"
+            data-testid="loginSignUpFormHeader"
+          >
+            Login
+          </h1>
+          <label
+            className="sc-fubCfw bKdprW"
+            htmlFor="loginEmailInput"
+          >
+            Email
+            <br />
+            <input
+              className="sc-pFZIQ GWGWB"
+              id="loginEmailInput"
+              onChange={[Function]}
+              type="email"
+            />
+          </label>
+          <label
+            className="sc-fubCfw bKdprW"
+            htmlFor="loginPasswordInput"
+          >
+            <div
+              className="sc-jrAGrp hNnGqS"
+            >
+              Password
+              <a
+                href="#/ForgotPassword"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "color": "#3030bd",
+                    "textDecoration": "none",
+                  }
+                }
+              >
+                Forgot Your Password?
+              </a>
+            </div>
+            <input
+              className="sc-pFZIQ GWGWB"
+              id="loginPasswordInput"
+              onChange={[Function]}
+              type="password"
+            />
+          </label>
+          <br />
+          <button
+            className="sc-kEjbxe gFrpFu"
+            data-testid="loginSignUpButton"
+            onClick={[Function]}
+          >
+            <b>
+              Login
+            </b>
+          </button>
+          <br />
+          <p>
+            or sign in with
+          </p>
+          <br />
+          <button
+            className="sc-iqHYGH bnHxCu"
+            onClick={[Function]}
+          >
+            <img
+              className="sc-crrsfI hRBQgM"
+              src="icons8-google.svg"
+            />
+            <b>
+              Google
+            </b>
+          </button>
+          <br />
+          <p
+            className="sc-dQppl jzpyrc"
+          >
+            Don't have an account?
+          </p>
+          <a
+            href="#/SignUp"
+            onClick={[Function]}
+            style={
+              Object {
+                "textDecoration": "none",
+              }
+            }
+          >
+            <b
+              style={
+                Object {
+                  "color": "#3030bd",
+                  "textDecoration": "none",
+                }
+              }
+            >
+              Sign Up
+            </b>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>,
+]
+`;

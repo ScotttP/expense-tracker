@@ -8,7 +8,7 @@ const Account = () => {
 		firebaseAuth.signOut();
 	};
 	return (
-		<div id="account">
+		<div id="account" testid="accountRouteTest">
 			<button onClick={signOut}>Sign Out</button>
 		</div>
 	);

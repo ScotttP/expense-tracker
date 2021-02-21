@@ -153,8 +153,10 @@ const Form = (props) => {
 		<FormDiv>
 			<SignUpAndLoginContainer>
 				<FormContent>
-					<LoginHeader>{props.formType}</LoginHeader>
-					<FormLabels>
+					<LoginHeader data-testid="loginSignUpFormHeader">
+						{props.formType}
+					</LoginHeader>
+					<FormLabels htmlFor="loginEmailInput">
 						Email
 						<br></br>
 						<FormInputs
@@ -163,7 +165,7 @@ const Form = (props) => {
 							onChange={(e) => setEmail(e.target.value)}
 						></FormInputs>
 					</FormLabels>
-					<FormLabels>
+					<FormLabels htmlFor="loginPasswordInput">
 						<PasswordTextDiv>
 							Password
 							<Link
@@ -184,13 +186,19 @@ const Form = (props) => {
 					<br></br>
 					{props.formType === "Login" ? (
 						<>
-							<LoginButton onClick={(e) => loginWithEmail(e)}>
+							<LoginButton
+								data-testid="loginSignUpButton"
+								onClick={(e) => loginWithEmail(e)}
+							>
 								<b>{props.formType}</b>
 							</LoginButton>
 						</>
 					) : (
 						<>
-							<LoginButton onClick={(e) => signUpWithEmail(e)}>
+							<LoginButton
+								data-testid="loginSignUpButton"
+								onClick={(e) => signUpWithEmail(e)}
+							>
 								<b>{props.formType}</b>
 							</LoginButton>
 						</>

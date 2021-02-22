@@ -9,7 +9,7 @@ import "./App.css";
 import Account from "./Components/Account";
 import Dashboard from "./Components/Dashboard";
 import History from "./Components/History";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import firebase from "./FirebaseConfig";

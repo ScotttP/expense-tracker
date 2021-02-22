@@ -77,7 +77,7 @@ const Navbar = (props) => {
 	const [display, setDisplay] = useState("none");
 
 	return (
-		<NavbarHeader>
+		<NavbarHeader data-testid="navbar">
 			<NavbarLeft>
 				<h1>Expense Tracker</h1>
 				<HamburgerSpan
@@ -106,22 +106,32 @@ const Navbar = (props) => {
 				{props.currentUser ? (
 					<>
 						<li>
-							<Link to="/Dashboard">Dashboard</Link>
+							<Link data-testid="dashboardLink" to="/Dashboard">
+								Dashboard
+							</Link>
 						</li>
 						<li>
-							<Link to="/History">History</Link>
+							<Link data-testid="historyLink" to="/History">
+								History
+							</Link>
 						</li>
 						<li>
-							<Link to="/Account">Account</Link>
+							<Link data-testid="accountLink" to="/Account">
+								Account
+							</Link>
 						</li>
 					</>
 				) : (
 					<>
 						<li>
-							<Link to="/Login">Login</Link>
+							<Link data-testid="loginLink" to="/Login">
+								Login
+							</Link>
 						</li>
 						<li>
-							<Link to="/SignUp">SignUp</Link>
+							<Link data-testid="signupLink" to="/SignUp">
+								SignUp
+							</Link>
 						</li>
 					</>
 				)}

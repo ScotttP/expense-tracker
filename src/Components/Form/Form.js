@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import Error from "../Error";
 import styled from "styled-components";
-import googleLogo from "../Assets/icons8-google.svg";
-import firebase from "../FirebaseConfig";
+import googleLogo from "../../Assets/icons8-google.svg";
+import firebase from "../../FirebaseConfig";
+import Error from "../Error";
 
 const FormDiv = styled.div`
 	height: 90vh;
@@ -182,7 +183,7 @@ const Form = (props) => {
 							onChange={(e) => setPassword(e.target.value)}
 						></FormInputs>
 					</FormLabels>
-					{/* <Error errors={props.errors} /> */}
+					<Error errors={props.errors} />
 					<br></br>
 					{props.formType === "Login" ? (
 						<>
@@ -215,7 +216,11 @@ const Form = (props) => {
 					{props.formType === "Login" ? (
 						<>
 							<DontHaveAnAccount>Don't have an account?</DontHaveAnAccount>
-							<Link style={{ textDecoration: "none" }} to="/SignUp">
+							<Link
+								style={{ textDecoration: "none" }}
+								to="/SignUp"
+								data-testid="SignUpButton"
+							>
 								<b
 									// onClick={props.resetErrors}
 									style={{ textDecoration: "none", color: "#3030bd" }}
@@ -227,7 +232,11 @@ const Form = (props) => {
 					) : (
 						<>
 							<DontHaveAnAccount>Already Have An Account?</DontHaveAnAccount>
-							<Link style={{ textDecoration: "none" }} to="/Login">
+							<Link
+								style={{ textDecoration: "none" }}
+								to="/Login"
+								data-testid="LoginButton"
+							>
 								<b
 									// onClick={props.resetErrors}
 									style={{ textDecoration: "none", color: "#3030bd" }}

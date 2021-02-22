@@ -4,6 +4,7 @@ exports[`snapshot test app snapshot 1`] = `
 Array [
   <header
     className="sc-bdfBwQ fFPChT"
+    data-testid="navbar"
   >
     <div
       className="sc-gsTCUz iUqRFX"
@@ -42,6 +43,7 @@ Array [
     >
       <li>
         <a
+          data-testid="loginLink"
           href="#/Login"
           onClick={[Function]}
         >
@@ -50,6 +52,7 @@ Array [
       </li>
       <li>
         <a
+          data-testid="signupLink"
           href="#/SignUp"
           onClick={[Function]}
         >
@@ -62,39 +65,39 @@ Array [
     id="content"
   >
     <div
-      className="sc-eCssSg kHqwrC"
+      className="sc-jSgupP jyNjWz"
     >
       <form
-        className="sc-jSgupP crnJYq"
+        className="sc-gKsewC HjgAL"
       >
         <div
-          className="sc-gKsewC cntkFc"
+          className="sc-iBPRYJ fDSLzw"
         >
           <h1
-            className="sc-iBPRYJ eMDTAQ"
+            className="sc-fubCfw lauspp"
             data-testid="loginSignUpFormHeader"
           >
             Login
           </h1>
           <label
-            className="sc-fubCfw bKdprW"
+            className="sc-pFZIQ eakQlN"
             htmlFor="loginEmailInput"
           >
             Email
             <br />
             <input
-              className="sc-pFZIQ GWGWB"
+              className="sc-jrAGrp eAVMDp"
               id="loginEmailInput"
               onChange={[Function]}
               type="email"
             />
           </label>
           <label
-            className="sc-fubCfw bKdprW"
+            className="sc-pFZIQ eakQlN"
             htmlFor="loginPasswordInput"
           >
             <div
-              className="sc-jrAGrp hNnGqS"
+              className="sc-kEjbxe gsNGZp"
             >
               Password
               <a
@@ -111,7 +114,7 @@ Array [
               </a>
             </div>
             <input
-              className="sc-pFZIQ GWGWB"
+              className="sc-jrAGrp eAVMDp"
               id="loginPasswordInput"
               onChange={[Function]}
               type="password"
@@ -119,7 +122,7 @@ Array [
           </label>
           <br />
           <button
-            className="sc-kEjbxe gFrpFu"
+            className="sc-iqHYGH hvbIIf"
             data-testid="loginSignUpButton"
             onClick={[Function]}
           >
@@ -133,11 +136,11 @@ Array [
           </p>
           <br />
           <button
-            className="sc-iqHYGH bnHxCu"
+            className="sc-crrsfI iwRiOn"
             onClick={[Function]}
           >
             <img
-              className="sc-crrsfI hRBQgM"
+              className="sc-dQppl eZVUAW"
               src="icons8-google.svg"
             />
             <b>
@@ -146,11 +149,12 @@ Array [
           </button>
           <br />
           <p
-            className="sc-dQppl jzpyrc"
+            className="sc-bqyKva eHWJlT"
           >
             Don't have an account?
           </p>
           <a
+            data-testid="SignUpButton"
             href="#/SignUp"
             onClick={[Function]}
             style={

@@ -1,8 +1,8 @@
 import { React } from "react";
-import Form from "./Form";
+import Form from "./Form/Form";
 
 const Login = (props) => {
-	return <Form formType="Login"></Form>;
+	return <Form data-testid="formComponent" formType="Login"></Form>;
 };
 
 export default Login;

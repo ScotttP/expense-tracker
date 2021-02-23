@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render, screen, cleanup, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
 import Navbar from "../Navbar/Navbar";

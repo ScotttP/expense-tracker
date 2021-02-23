@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 // import Error from "../Error";
 import styled from "styled-components";
 import googleLogo from "../../Assets/icons8-google.svg";
-import firebase from "../../FirebaseConfig";
 import Error from "../Error";
 
 const FormDiv = styled.div`
@@ -119,37 +118,7 @@ const DontHaveAnAccount = styled.p`
 	margin: 5% 2% 2% 2%;
 `;
 
-const firebaseAuth = firebase.auth();
-
 const Form = (props) => {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [errors, setErrors] = useState("");
-
-	const loginWithEmail = (e) => {
-		e.preventDefault();
-		firebaseAuth.signInWithEmailAndPassword(email, password).catch((error) => {
-			setErrors(error);
-		});
-
-		setErrors("");
-	};
-	const signUpWithEmail = (e) => {
-		e.preventDefault();
-		firebaseAuth
-			.createUserWithEmailAndPassword(email, password)
-			.catch((error) => {
-				setErrors(error);
-			});
-
-		setErrors("");
-	};
-
-	const loginWithGoogle = (e) => {
-		let provider = new firebase.auth.GoogleAuthProvider();
-		firebaseAuth.signInWithPopup(provider);
-	};
-
 	return (
 		<FormDiv>
 			<SignUpAndLoginContainer>
@@ -163,7 +132,8 @@ const Form = (props) => {
 						<FormInputs
 							id="loginEmailInput"
 							type="email"
-							onChange={(e) => setEmail(e.target.value)}
+							onChange={(e) => props.settingEmail(e.target.value)}
+							required
 						></FormInputs>
 					</FormLabels>
 					<FormLabels htmlFor="loginPasswordInput">
@@ -180,7 +150,8 @@ const Form = (props) => {
 						<FormInputs
 							id="loginPasswordInput"
 							type="password"
-							onChange={(e) => setPassword(e.target.value)}
+							onChange={(e) => props.settingPassword(e.target.value)}
+							required
 						></FormInputs>
 					</FormLabels>
 					<Error errors={props.errors} />
@@ -188,8 +159,8 @@ const Form = (props) => {
 					{props.formType === "Login" ? (
 						<>
 							<LoginButton
-								data-testid="loginSignUpButton"
-								onClick={(e) => loginWithEmail(e)}
+								data-testid="loginButton"
+								onClick={(e) => props.loginWithEmail(e)}
 							>
 								<b>{props.formType}</b>
 							</LoginButton>
@@ -197,8 +168,8 @@ const Form = (props) => {
 					) : (
 						<>
 							<LoginButton
-								data-testid="loginSignUpButton"
-								onClick={(e) => signUpWithEmail(e)}
+								data-testid="signUpButton"
+								onClick={(e) => props.signUpWithEmail(e)}
 							>
 								<b>{props.formType}</b>
 							</LoginButton>
@@ -208,7 +179,10 @@ const Form = (props) => {
 					<br></br>
 					<p>or sign in with</p>
 					<br></br>
-					<GoogleButton onClick={(e) => loginWithGoogle(e)}>
+					<GoogleButton
+						data-testid="googleButton"
+						onClick={(e) => props.loginWithGoogle(e)}
+					>
 						<GoogleLogo src={googleLogo}></GoogleLogo>
 						<b>Google</b>
 					</GoogleButton>
@@ -216,11 +190,7 @@ const Form = (props) => {
 					{props.formType === "Login" ? (
 						<>
 							<DontHaveAnAccount>Don't have an account?</DontHaveAnAccount>
-							<Link
-								style={{ textDecoration: "none" }}
-								to="/SignUp"
-								data-testid="SignUpButton"
-							>
+							<Link style={{ textDecoration: "none" }} to="/SignUp">
 								<b
 									// onClick={props.resetErrors}
 									style={{ textDecoration: "none", color: "#3030bd" }}
@@ -232,11 +202,7 @@ const Form = (props) => {
 					) : (
 						<>
 							<DontHaveAnAccount>Already Have An Account?</DontHaveAnAccount>
-							<Link
-								style={{ textDecoration: "none" }}
-								to="/Login"
-								data-testid="LoginButton"
-							>
+							<Link style={{ textDecoration: "none" }} to="/Login">
 								<b
 									// onClick={props.resetErrors}
 									style={{ textDecoration: "none", color: "#3030bd" }}

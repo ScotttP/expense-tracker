@@ -89,6 +89,7 @@ Array [
               className="sc-jrAGrp eAVMDp"
               id="loginEmailInput"
               onChange={[Function]}
+              required={true}
               type="email"
             />
           </label>
@@ -117,13 +118,14 @@ Array [
               className="sc-jrAGrp eAVMDp"
               id="loginPasswordInput"
               onChange={[Function]}
+              required={true}
               type="password"
             />
           </label>
           <br />
           <button
             className="sc-iqHYGH hvbIIf"
-            data-testid="loginSignUpButton"
+            data-testid="loginButton"
             onClick={[Function]}
           >
             <b>
@@ -137,6 +139,7 @@ Array [
           <br />
           <button
             className="sc-crrsfI iwRiOn"
+            data-testid="googleButton"
             onClick={[Function]}
           >
             <img
@@ -154,7 +157,6 @@ Array [
             Don't have an account?
           </p>
           <a
-            data-testid="SignUpButton"
             href="#/SignUp"
             onClick={[Function]}
             style={

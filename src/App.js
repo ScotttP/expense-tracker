@@ -24,7 +24,6 @@ const App = () => {
 		if (user) return setLoggedIn(true);
 		else return setLoggedIn(false);
 	};
-
 	useEffect(() => {
 		const unsubscribe = firebaseAuth.onAuthStateChanged(authStateChange);
 		return () => {

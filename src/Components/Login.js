@@ -27,8 +27,8 @@ const Login = () => {
 		<Form
 			loginWithEmail={loginWithEmail}
 			loginWithGoogle={loginWithGoogle}
-			settingEmail={(e) => setEmail(e.target.value)}
-			settingPassword={(e) => setPassword(e.target.value)}
+			settingEmail={(e) => setEmail(e)}
+			settingPassword={(e) => setPassword(e)}
 			data-testid="formComponent"
 			formType="Login"
 		></Form>

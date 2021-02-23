@@ -1,4 +1,4 @@
-import { React } from "react";
+import React, { useState } from "react";
 import Form from "./Form/Form";
 import firebase from "../FirebaseConfig";
 
@@ -23,8 +23,8 @@ const SignUp = (props) => {
 	return (
 		<Form
 			formType="Sign Up"
-			settingEmail={(e) => setEmail(e.target.value)}
-			settingPassword={(e) => setPassword(e.target.value)}
+			settingEmail={(e) => setEmail(e)}
+			settingPassword={(e) => setPassword(e)}
 			signUpWithEmail={signUpWithEmail}
 		></Form>
 	);

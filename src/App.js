@@ -6,9 +6,9 @@ import {
 	Route,
 } from "react-router-dom";
 import "./App.css";
-import Account from "./Components/Account";
-import Dashboard from "./Components/Dashboard";
-import History from "./Components/History";
+import Account from "./Components/Account/Account";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import History from "./Components/History/History";
 import Navbar from "./Components/Navbar/Navbar";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";

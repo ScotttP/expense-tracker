@@ -2,8 +2,7 @@ import React from "react";
 
 const GoalsVsActual = () => {
 	return (
-		<div id="dashboard" data-testid="dashboard">
-			<p>Month: February, 2021</p>
+		<div data-testid="GoalsVsActual">
 			<div>
 				<p>
 					Goal: <b>$2,000</b>

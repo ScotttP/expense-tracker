@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import ExpenseCategory from "./ExpenseCategory";
+import ExpenseCategory from "../ExpenseCategory";
 import uniqid from "uniqid";
 
-const ExpensesList = () => {
+const ExpensesList = (props) => {
 	const [categoryArray, setCategoryArray] = useState([]);
 
 	useEffect(() => {
@@ -13,10 +13,15 @@ const ExpensesList = () => {
 	}, []);
 
 	return (
-		<div>
+		<div data-testid="ExpensesList">
 			<div>
 				<b>Expense Categories</b>
-				<button onClick={() => console.log("add category")}>+</button>
+				<button
+					data-testid="AddCategoryButton"
+					onClick={() => props.addExpenseCategory()}
+				>
+					+
+				</button>
 			</div>
 			<div>
 				<ul>

@@ -7,9 +7,8 @@ const ExpensesList = (props) => {
 
 	useEffect(() => {
 		setTimeout(() => {
-			setCategoryArray([0, 1]); //mimicks call to firebase
+			setCategoryArray([0]); //mimicks call to firebase
 		}, 2000);
-		setCategoryArray([0]);
 	}, []);
 
 	return (
@@ -22,6 +21,15 @@ const ExpensesList = (props) => {
 				>
 					+
 				</button>
+			</div>
+			<div>
+				<label htmlFor="ExpenseCategoryName"></label>
+				<input
+					type="text"
+					name="ExpenseCategoryName"
+					placeholder="Utilities"
+				></input>
+				<button>Add</button>
 			</div>
 			<div>
 				<ul>
